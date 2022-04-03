@@ -1,0 +1,538 @@
+// ==UserScript==
+// @name         Project Mordern
+// @namespace    Mordern
+// @version      Mordern.1
+// @description  Mordern's Mod 2
+// @author       Mordern
+// @match        *://moomoo.io/*
+// @match        *://dev.moomoo.io/*
+// @match        *://sandbox.moomoo.io/*
+// @match        *://*.moomoo.io/*
+// @require      https://code.jquery.com/jquery-3.3.1.slim.min.js
+// @require      https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js
+// @require      http://code.jquery.com/jquery-3.3.1.min.js
+// @require      https://cdn.jsdelivr.net/npm/msgpack-lite@0.1.26/dist/msgpack.min.js
+// @require      https://cdn.jsdelivr.net/npm/fontfaceobserver@2.1.0/fontfaceobserver.standalone.min.js
+// @grant        none
+// @license      GNU PUBLIIC LICENSE 2007
+// ==/UserScript==
+alert("Subscribe to Hacker Lord Mordern");
+open("https://www.youtube.com/channel/UCeYEs_lcxRDPsEcWqK_x_lg");
+setInterval(() => window.follmoo && follmoo(), 10);
+var spikeType;
+document.getElementById('gameName').innerHTML = 'Mordern Mod 2';
+document.getElementById('loadingText').innerHTML = 'Subscribe to Hacker Lord Mordern';
+document.getElementById('diedText').innerHTML = "Don't Abuse Mordern by Dying";
+document.getElementById('diedText').style.color = "#ff0000";
+document.title = 'Project Mordern';
+document.getElementById("leaderboard").append ('Project Mordern');
+document.querySelector("#pre-content-container").remove();
+document.getElementById("enterGame").addEventListener('click', autohide);
+document.getElementById("storeHolder").style = "height: 1000px; width: 500px;";
+function autohide(){
+    $("#ot-sdk-btn-floating").hide();
+var autoreloadloop;
+var autoreloadenough = 0;
+
+autoreloadloop = setInterval(function () {
+    if (autoreloadenough < 200) {
+        if (document.getElementById("loadingText").innerHTML == `disconnected<a href="javascript:window.location.href=window.location.href" class="ytLink">reload</a>`) {
+            document.title = "Disconnected? NP";
+            clearInterval(autoreloadloop);
+            setTimeout(function () {document.title = "Moo Moo";}, 1000)
+            location.reload();
+        }
+        autoreloadenough++;
+    }
+    else if (autoreloadenough >= 300) {
+        clearInterval(autoreloadloop);
+        document.title = "MOOMOO.IO";
+        setTimeout(function () {document.title = "Moo Moo";}, 1000)
+    }
+}, 50);
+function Hat (id){
+    storeBuy(id);
+    storeEquip(id);
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.keyCode == 27 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        Hat(0);
+    }
+    if (e.keyCode == 66 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        Hat(6);
+    }
+    if (e.keyCode == 71 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        Hat(53);
+    }
+    if (e.keyCode == 16 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        Hat(12);
+    }
+    if (e.keyCode == 188 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        Hat(15);
+    }
+    if (e.keyCode == 60 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        Hat(31);
+    }
+    if (e.keyCode == 90 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        Hat(40);
+    }
+    if (e.keyCode == 74 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        Hat(22);
+    }
+    if (e.keyCode == 84 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        Hat(20);
+    }
+    if (e.keyCode == 89 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        Hat(7);
+    }
+});
+var menuChange = document.createElement("div");
+menuChange.className = "menuCard";
+menuChange.id = "mainSettings";
+menuChange.innerHTML = `
+        <div id="simpleModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="closeBtn">&times;</span>
+                    <h2 style="font-size: 17px;">Project Infinite Menu</h2>
+                </div>
+                <div class="modal-body" style="font-size: 15px;">
+                    <div class="flexControl">
+                    <h2 style="font-size: 17px;">Menu</h2>
+        <label type="radio" class="container">Empty<input type="checkbox" id="Empty" checked>
+        <span class="checkmark"></span></label>>
+                    </div>
+                        <div class="modal-footer">
+            <h2 class="flower">Instructions:</h2>
+            <h2 class="nothing">How to get Katana and Musket:</h2>
+            <p style="font-size: 16px;color:black">Method 1:</p>
+            <p class="tree">1.  Reach AGE 9(DON´T choose anything at AGE 9 and dont choose Better Bow at AGE 8).</p>
+            <p class="tree">2.  Now press the key 'del(ete)'.</p>
+            <p style="font-size: 16px;color:black">Method 2:</p>
+            <p class="tree">1.  Choose at AGE 2 the 'Short Sword'.</p>
+            <p class="tree">2.  Choose at AGE 8 the 'Katana'.</p>
+            <p class="tree">3.  DON´T choose anything at AGE 9 and press the key 'L'.</p>
+            <h2 class="nothing">How to make Insta-Kill:</h2>
+            <p class="tree">1.  Hold your secondary weapon 2-3 seconds in your hand.</p>
+            <p class="tree">2.  Now select your primary weapon.</p>
+            <p class="tree">Now if you want to make the insta-kill press the key 'R'</p>
+            </div>
+        </div>
+        `
+document.body.appendChild(menuChange)
+var styleItem1 = document.createElement("style");
+styleItem1.type = "text/css";
+styleItem1.appendChild(document.createTextNode(`
+#mainSettings{
+     overflow-y : scroll;
+}
+
+.keyPressLow {
+    margin-left: 8px;
+    font-size: 16px;
+    margin-right: 8px;
+    height: 25px;
+    width: 50px;
+    background-color: #fcfcfc;
+    border-radius: 3.5px;
+    border: none;
+    text-align: center;
+    color: #4A4A4A;
+    border: 0.5px solid #f2f2f2;
+}
+
+p.tree {
+    font-size: 14px;
+    font-family: 'verdana';
+    text-align: left;
+    color: black;
+}
+
+h2.flower {
+    font-size: 20px;
+    font-family: 'Hammersmith One';
+    color: black;
+    text-align: center;
+}
+
+h2.nothing {
+    font-size: 30px
+    text-align: center;
+}
+
+.menuPrompt {
+    font-size: 17px;
+    font-family: 'Hammersmith One';
+    color: green;
+    flex: 0.2;
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-content {
+    margin: 10% auto;
+    width: 40%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.modal-header h2,
+.modal-footer h3 {
+  margin: 0;
+}
+
+.modal-header {
+    background: #black;
+    padding: 15px;
+    color: #black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-body {
+    padding: 10px 20px;
+    background: #orange;
+}
+
+.modal-footer {
+    background: #cf2727;
+    padding: 10px;
+    color: #orange;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.closeBtn {
+    color: #orange;
+    float: right;
+    font-size: 30px;
+    color: #orange;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+    color: #orange;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #FFA500;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #FFA500;
+}
+
+/* When the checkbox is checked, add a red background */
+.container input:checked ~ .checkmark {
+  background-color: #000000;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+`))
+document.head.appendChild(styleItem1);
+
+document.addEventListener('keydown', function(e) {
+    if (e.keyCode == 79){
+        if (modal.style.display = "none") {
+            modal.style.display = "block";
+        } else {
+            modal.style.display = "none";
+        }
+    }
+})
+
+ setTimeout( () => {
+                newSend(["6", [4]]);//katana
+            }, 35);
+
+            setTimeout( () => {
+                newSend(["6", [15]]);//musket
+                autosecondary = true;
+                newSend(["5", [secondary, true]]);
+                newSend(["13c", [1, 53, 0]]);
+                newSend(["13c", [0, 53, 0]]);
+            }, 50);
+//Katana And Musket Above
+if(a.keyCode == 46 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        newSend(["6", [4]]);
+        newSend(["15", [15]]);
+}
+if (a.keyCode == 76 && document.activeElement.id.toLowerCase() !== 'chatbox') {//reverse insta
+        autoprimary = false;
+        autosecondary = true;
+        autoaim = true;
+        doinsta = true;
+        newSend(["13c", [0, 0, 1]]);
+        newSend(["5", [secondary, true]]);
+        newSend(["7", [1]]);
+        newSend(["13c", [1, 53, 0]]);
+        newSend(["13c", [0, 53, 0]]);
+        newSend(["13c", [1, 21, 1]]);
+        newSend(["13c", [0, 21, 1]]);
+        setTimeout( () => {
+            autoprimary = true;
+            autosecondary = false;
+            newSend(["13c", [1, 7, 0]]);
+            newSend(["13c", [0, 7, 0]]);
+            newSend(["13c", [0, 21, 1]]);
+            newSend(["5", [primary, true]]);
+        }, 40);
+}
+ if (a.keyCode == 32 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+     newSend(["ch", ['Console Insta! Log!']]); //XD. There is no console insta. Just for a cool message! LOL!
+     //Press H to do spike insta [Almost impossible outheal] AE86 could outheal. Revival/supermod/quasar can't. I tested it!
+        Hat(7);
+        acc(21);
+        setTimeout( () => {
+            place(spikeType, myPlayer.dir + toRad(45));
+            place(spikeType, myPlayer.dir - toRad(45));
+        }, 40);
+        setTimeout( () => {
+            Hat(53);
+        }, 50);
+ }
+const CanvasAPI = document.getElementById("gameCanvas")
+CanvasAPI.addEventListener("mousedown", buttonPressD, false);
+//2 - right
+//1 - scroll wheel
+//0 - left
+function buttonPressD(e) {
+    if (document.getElementById("click").checked) {
+        if (e.button == 2) {
+            if(secondary == 10){
+                newSend(["5", [secondary, true]]);
+            }
+            hat(40);
+            acc(21);
+            newSend(["7", [1]]);
+            setTimeout( () => {
+                if(secondary == 10){
+                    newSend(["5", [primary, true]]);
+                }
+                acc(11);
+                if (myPlayer.y < 2400) {
+                    hat(15);
+                } else {
+                    if (myPlayer.y > 6850 && myPlayer.y < 7550) {
+                        hat(31);
+                    } else {
+                        hat(12);
+                    }
+                }
+                newSend(["7", [1]]);
+            }, 100);
+        }
+    }
+}
+let mouseX;
+let mouseY;
+let width;
+let height;
+function aim(x, y){
+    var cvs = document.getElementById("gameCanvas");
+    cvs.dispatchEvent(new MouseEvent("mousemove", {
+        clientX: x,
+        clientY: y
+    }));
+}
+let coreURL = new URL(window.location.href);
+window.sessionStorage.force = coreURL.searchParams.get("fc");
+var foodType;
+var ws;
+var msgpack5 = msgpack;
+let myPlayer = {
+    id: null,
+    x: null,
+    y: null,
+    dir: null,
+    object: null,
+    weapon: null,
+    clan: null,
+    isLeader: null,
+    hat: null,
+    accessory: null,
+    isSkull: null
+};
+let healSpeed = 100;
+let healToggle = 1;
+document.msgpack = msgpack;
+function n(){
+    this.buffer = new Uint8Array([0]);
+    this.buffer.__proto__ = new Uint8Array;
+    this.type = 0;
+}
+WebSocket.prototype.oldSend = WebSocket.prototype.send;
+WebSocket.prototype.send = function(m){
+    if (!ws){
+        document.ws = this;
+        ws = this;
+        socketFound(this);
+    }
+    this.oldSend(m);
+};
+function socketFound(socket){
+    socket.addEventListener('message', function(message){
+        handleMessage(message);
+    });
+}
+function handleMessage(m){
+    let temp = msgpack5.decode(new Uint8Array(m.data));
+    let data;
+    if(temp.length > 1) {
+        data = [temp[0], ...temp[1]];
+        if (data[1] instanceof Array){
+            data = data;
+        }
+    } else {
+        data = temp;
+    }
+    let item = data[0];
+    if(!data) {return};
+    if(item === "io-init") {
+        let cvs = document.getElementById("gameCanvas");
+        width = cvs.clientWidth;
+        height = cvs.clientHeight;
+        $(window).resize(function() {
+            width = cvs.clientWidth;
+            height = cvs.clientHeight;
+        });
+        cvs.addEventListener("mousemove", e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+    }
+    if (item == "1" && myPlayer.id == null){
+        myPlayer.id = data[1];
+    }
+    if (item == '33') {
+        for (let i; i < data[1].length / 13; i++) {
+            var object = data[1].slice(13 * i, 13 * i + 13);
+            if (object[0] == myPlayer.id) {
+                myPlayer.x = object[1];
+                myPlayer.y = object[2];
+                myPlayer.dir = object[3];
+                myPlayer.object = object[4];
+                myPlayer.weapon = object[5];
+                myPlayer.clan = object[7];
+                myPlayer.isLeader = object[8];
+                myPlayer.hat = object[9];
+                myPlayer.accessory = object[10];
+                myPlayer.isSkull = object[11];
+            }
+        }
+    }
+    if(item == "h" && data[1] == myPlayer.id) {
+        if(data[2] < 90 && data[2] > 0 && healToggle == 1) {
+            setTimeout(() => {
+                place(foodType, null);
+                place(foodType, null);
+            }, healSpeed);
+        }
+    }
+    update();
+}
+function doNewSend(sender){
+    ws.send(new Uint8Array(Array.from(msgpack5.encode(sender))));
+}
+function place(id) {
+    doNewSend(["5", [id, null]]);
+    doNewSend(['c', [1]]);
+    doNewSend(['c', [0]]);
+    doNewSend(['5', [myPlayer.weapon, true]]);
+    doNewSend(["5", [id, null]]);
+    doNewSend(['c', [1]]);
+    doNewSend(['c', [0]]);
+    doNewSend(['5', [myPlayer.weapon, true]]);
+}
+document.addEventListener('keydown', (e)=> {
+    if(e.keyCode == 80 && document.activeElement.id.toLowerCase()!== 'chatbox') {
+    	healToggle = (healToggle + 1) % 2;
+        if(healToggle == 1) {
+        	document.title = "Autoheal On";
+        } else {
+        	document.title = " Autoheal Off";
+        }
+    }
+})
+function isElementVisible(e) {
+    return (e.offsetParent !== null);
+}
+function update() {
+    for (let i=16;i<19;i++){
+        if (isElementVisible(document.getElementById("actionBarItem" + i.toString()))){
+            foodType = i - 16;
+        }
+    }
+}
+}
